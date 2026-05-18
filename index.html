@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel da SAPS — Atenção Primária à Saúde</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f4f8;
+      color: #1a2b3c;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #005a9c;
+      color: #fff;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header .title-block h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    header .title-block p {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 40px;
+    }
+
+    .painel-wrapper {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 100%;
+      max-width: 1200px;
+      padding: 16px;
+    }
+
+    .tableau-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Cobre a faixa de anúncios do Tableau Public no rodapé */
+    .tableau-container::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: #ffffff;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    footer {
+      text-align: center;
+      padding: 14px;
+      font-size: 0.75rem;
+      color: #6b7c93;
+      background: #e8edf2;
+      border-top: 1px solid #d0dae4;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title-block">
+      <h1>Painel da SAPS — Atenção Primária à Saúde</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="painel-wrapper">
+      <div class="tableau-container">
+        <iframe
+          src="https://public.tableau.com/views/PaineldaSAPS/APS?:showVizHome=no&:embed=true&:language=pt-BR&:display_count=n&:toolbar=yes"
+          width="100%"
+          height="3754px"
+          style="border: none; display: block;"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Fonte: eGestor APS
+  </footer>
+
+  <script>
+    // Ajusta altura do iframe em telas pequenas
+    var iframe = document.querySelector('.tableau-container iframe');
+    function resizeIframe() {
+      if (window.innerWidth <= 500) {
+        iframe.style.height = '6727px';
+      } else {
+        iframe.style.height = '3754px';
+      }
+    }
+    resizeIframe();
+    window.addEventListener('resize', resizeIframe);
+  </script>
+
+</body>
+</html>
