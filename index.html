@@ -18,7 +18,6 @@
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: #f0f4f8;
@@ -27,7 +26,6 @@
       display: flex;
       flex-direction: column;
     }
-
     header {
       background: #005a9c;
       color: #fff;
@@ -37,19 +35,16 @@
       gap: 16px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-
     header .title-block h1 {
       font-size: 1.2rem;
       font-weight: 700;
       line-height: 1.2;
     }
-
     header .title-block p {
       font-size: 0.8rem;
       opacity: 0.85;
       margin-top: 2px;
     }
-
     main {
       flex: 1;
       display: flex;
@@ -57,7 +52,6 @@
       align-items: center;
       padding: 24px 16px 40px;
     }
-
     .painel-wrapper {
       background: #ffffff;
       border-radius: 8px;
@@ -67,13 +61,11 @@
       max-width: 1200px;
       padding: 16px;
     }
-
     .tableau-container {
       position: relative;
       width: 100%;
       overflow: hidden;
     }
-
     /* Cobre a faixa de anúncios do Tableau Public no rodapé */
     .tableau-container::after {
       content: '';
@@ -86,7 +78,6 @@
       pointer-events: none;
       z-index: 10;
     }
-
     footer {
       text-align: center;
       padding: 14px;
@@ -98,13 +89,17 @@
   </style>
 </head>
 <body>
-
   <header>
     <div class="title-block">
       <h1>Painel da SAPS — Atenção Primária à Saúde</h1>
     </div>
+    <nav style="margin-left:auto;display:flex;gap:10px;">
+      <a href="https://gaiafranklinalexandre-blip.github.io/notas-tecnicas-aps/" target="_blank"
+         style="color:#fff;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);padding:6px 14px;border-radius:5px;text-decoration:none;font-size:0.85rem;white-space:nowrap;">
+        📋 Notas Técnicas
+      </a>
+    </nav>
   </header>
-
   <main>
     <div class="painel-wrapper">
       <div class="tableau-container">
@@ -118,11 +113,9 @@
       </div>
     </div>
   </main>
-
   <footer>
     Fonte: eGestor APS
   </footer>
-
   <script>
     // Ajusta altura do iframe em telas pequenas
     var iframe = document.querySelector('.tableau-container iframe');
@@ -136,6 +129,5 @@
     resizeIframe();
     window.addEventListener('resize', resizeIframe);
   </script>
-
 </body>
 </html>
